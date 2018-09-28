@@ -11,4 +11,7 @@ RUN chmod +x /usr/local/bin/wrapdocker
 
 # Define additional metadata for our image.
 VOLUME /var/lib/docker
-CMD ["wrapdocker"]
+
+# Custom Entrypoint
+ADD ./entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
